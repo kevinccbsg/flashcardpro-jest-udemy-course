@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import stacks from '../data/stacks.json';
 
 class StackList extends Component {
@@ -6,7 +7,9 @@ class StackList extends Component {
     return (
       <div>
         {stacks.map(obj => (
-          <h4 key={obj.id}>{obj.title}</h4>
+          <Link key={obj.id} to="/stack">
+            <h4>{obj.title}</h4>
+          </Link>
         ))}
       </div>
     );
