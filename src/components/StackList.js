@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { setStack } from '../actions';
+import { setStack, loadStacks } from '../actions';
 import stacks from '../data/stacks.json';
 
 class StackList extends Component {
+  componentDidMount() {
+    if (this.props.stacks.length === 0) {
+      this.props.loadStacks(stacks);
+    }
+  }
   render() {
+    const { stacks } = this.props;
     return (
       <div>
         {stacks.map(obj => (
@@ -23,10 +29,15 @@ class StackList extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => (
+  {
+    stacks: state.stacks,
+  }
+);
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     setStack,
+    loadStacks,
   }, dispatch);
 };
 

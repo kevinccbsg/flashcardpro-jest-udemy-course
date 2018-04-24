@@ -7,6 +7,7 @@ import rootReducer from './reducers';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import App from './components/App';
 import Stack from './components/Stack';
+import './index.css';
 
 const store = createStore(
   rootReducer,
