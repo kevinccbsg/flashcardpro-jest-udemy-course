@@ -1,4 +1,12 @@
 
+const ADD_STACK = 'ADD_STACK';
+const addStack = (stack) => (
+  {
+    type: ADD_STACK,
+    stack,
+  }
+);
+
 const LOAD_STACKS = 'LOAD_STACKS';
 const loadStacks = (stacks) => (
   {
@@ -18,6 +26,8 @@ const setStack = (stack) => (
 export {
   setStack,
   loadStacks,
+  addStack,
   SET_STACK,
   LOAD_STACKS,
+  ADD_STACK,
 };

@@ -1,4 +1,4 @@
-import { SET_STACK, LOAD_STACKS } from './../actions';
+import { SET_STACK, LOAD_STACKS, ADD_STACK } from './../actions';
 
 const initalState = {
   stacks: [],
@@ -12,6 +12,9 @@ const reducer = (state = { ...initalState }, action) => {
     }
     case LOAD_STACKS: {
       return { ...state, stacks: [...action.stacks] }; 
+    }
+    case ADD_STACK: {
+      return { ...state, stacks: [...state.stacks, { ...action.stack, id: state.stacks.length } ] };
     }
     default:
       return { ...state };

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
+import { addStack } from '../actions';
 
 class StackForm extends Component {
   constructor() {
@@ -28,7 +31,7 @@ class StackForm extends Component {
   }
 
   addStack() {
-
+    this.props.addStack(this.state);
   }
 
   render () {
@@ -70,4 +73,11 @@ class StackForm extends Component {
   }
 }
 
-export default StackForm;
+const mapStateToProps = () => ({});
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    addStack,
+  }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(StackForm);
