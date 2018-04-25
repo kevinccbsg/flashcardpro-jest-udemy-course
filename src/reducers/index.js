@@ -1,6 +1,6 @@
 import { SET_STACK, LOAD_STACKS, ADD_STACK } from './../actions';
 
-const initalState = {
+export const initalState = {
   stacks: [],
   stack: {},
 };
