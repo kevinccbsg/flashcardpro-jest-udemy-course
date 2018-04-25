@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { setStack, loadStacks } from '../actions';
 import stacks from '../data/stacks.json';
 
-class StackList extends Component {
+export class StackList extends Component {
   componentDidMount() {
     if (this.props.stacks.length === 0) {
       this.props.loadStacks(stacks);
