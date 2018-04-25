@@ -1,13 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Stack } from './Stack';
+import { stack as stackFixture } from '../data/fixtures';
 
 const props = {
-  stack: {
-    id: 0,
-    title: 'test card',
-    cards: [{ id: 0, prompt: 'test prompt', answer: 'test answer' }],
-  },
+  stack: stackFixture,
 };
 
 describe('Stack', () => {
