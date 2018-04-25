@@ -7,6 +7,7 @@ import rootReducer from './reducers';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import App from './components/App';
 import Stack from './components/Stack';
+import StackForm from './components/StackForm';
 import './index.css';
 
 const store = createStore(
@@ -20,6 +21,7 @@ render((
       <Switch>
         <Route path="/" exact component={App} />
         <Route path="/stack" component={Stack} />
+        <Route path="/stackform" component={StackForm} />
       </Switch>
     </Router>
   </Provider>
