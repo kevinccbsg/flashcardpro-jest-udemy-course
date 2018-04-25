@@ -1,4 +1,9 @@
 
+export const card = {
+  prompt: 'test prompt',
+  answer: 'test answer',
+};
+
 export const stack = {
   id: 0,
   title: 'test card',
